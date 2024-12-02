@@ -1,0 +1,191 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Gradiente de blanco */
+    color: #2D3748;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+/* Estilos del encabezado */
+header {
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #1A202C;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de la galería */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    position: relative;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    position: relative;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay para mostrar la ubicación */
+.image-location {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Estilos del lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column; /* Asegura que la imagen y el caption se alineen verticalmente */
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Caption para los tags */
+.caption {
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    width: 100%;
+    padding: 10px;
+}
+
+/* Botones de navegación del lightbox */
+.close, .prev, .next {
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close {
+    top: 20px;
+    right: 30px;
+}
+
+.prev {
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Animación suave en los botones */
+.close:hover, .prev:hover, .next:hover {
+    transform: scale(1.1);
+}
+
+/* Barra de búsqueda */
+.search-container {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+#search {
+    padding: 10px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 2em;
+    }
+}
+
+.location-info {
+    font-size: 1.2em;
+    color: #4A5568; /* Color gris oscuro */
+    margin-top: 10px;
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.5;
+}

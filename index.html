@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Photo Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Photo Gallery</h1>
+        <p class="location-info">
+            Discover the beauty of the <strong>Dominican Republic</strong> through this collection of images. Paradise beaches, unforgettable sunsets, and unique landscapes that capture the essence of this wonderful Caribbean country.
+        </p>
+    </header>
+
+    <!-- Search bar -->
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search images..." aria-label="Search images">
+    </div>
+
+    <main class="gallery-container">
+        <!-- Images will be dynamically loaded here -->
+    </main>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close">&times;</span>
+        <button class="prev" id="prev">&#10094;</button>
+        <img class="lightbox-img" id="lightbox-img" src="">
+        <button class="next" id="next">&#10095;</button>
+        <div id="caption" class="caption"></div>  <!-- This is where the caption (tags + file name) will be displayed -->
+    </div>
+        
+    <script src="js/script.js"></script>
+</body>
+</html>
